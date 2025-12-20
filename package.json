@@ -1,0 +1,26 @@
+{
+  "name": "hello-world-webcomponents",
+  "version": "1.0.0",
+  "description": "interactive \"Hello World\" application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint src/**/*.js",
+    "format": "prettier --write src/**/*.{js,css,html}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonasTeixeiraAccenture/hello-world-webcomponents.git"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^4.0.16",
+    "eslint": "^9.39.2",
+    "happy-dom": "^20.0.11",
+    "prettier": "^3.7.4",
+    "vite": "^7.3.0",
+    "vitest": "^4.0.16"
+  }
+}
