@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  // Use '/' for local dev, '/hello-world-webcomponents/' for GitHub Pages
+  base: command === 'build' ? '/hello-world-webcomponents/' : '/',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
@@ -13,4 +15,4 @@ export default defineConfig({
     globals: true,
     environment: 'happy-dom',
   },
-});
+}));
