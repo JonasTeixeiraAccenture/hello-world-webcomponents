@@ -11,10 +11,6 @@
     "lint": "eslint src/**/*.js",
     "format": "prettier --write src/**/*.{js,css,html}"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JonasTeixeiraAccenture/hello-world-webcomponents.git"
-  },
   "devDependencies": {
     "@vitest/ui": "^4.0.16",
     "eslint": "^9.39.2",
