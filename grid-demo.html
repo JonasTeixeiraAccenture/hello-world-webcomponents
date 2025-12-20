@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid System Demo - Hello World Web Components</title>
+  <link rel="stylesheet" href="/src/styles/main.scss">
+  <style>
+    /* Demo-specific styles */
+    .demo-box {
+      background: var(--color-primary-100);
+      border: 2px solid var(--color-primary-500);
+      border-radius: var(--radius-md);
+      padding: var(--spacing-lg);
+      text-align: center;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: var(--font-weight-medium);
+      color: var(--color-primary-900);
+    }
+
+    .demo-box--secondary {
+      background: var(--color-secondary-100);
+      border-color: var(--color-secondary-500);
+      color: var(--color-secondary-900);
+    }
+
+    .demo-box--success {
+      background: var(--color-success-100);
+      border-color: var(--color-success-500);
+      color: var(--color-success-900);
+    }
+
+    .demo-section {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl);
+      margin-bottom: var(--spacing-2xl);
+      box-shadow: var(--shadow-md);
+    }
+
+    .demo-section h2 {
+      color: var(--color-primary-700);
+      margin-bottom: var(--spacing-lg);
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-bold);
+    }
+
+    .demo-section h3 {
+      color: var(--color-text-primary);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .code-block {
+      background: var(--color-neutral-900);
+      color: var(--color-neutral-100);
+      padding: var(--spacing-md);
+      border-radius: var(--radius-md);
+      font-family: var(--font-family-mono);
+      font-size: var(--font-size-sm);
+      overflow-x: auto;
+      margin: var(--spacing-md) 0;
+    }
+
+    .header {
+      background: var(--color-primary-700);
+      color: white;
+      padding: var(--spacing-xl) 0;
+      margin-bottom: var(--spacing-3xl);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .header h1 {
+      color: white;
+      font-size: var(--font-size-3xl);
+      font-weight: var(--font-weight-bold);
+    }
+
+    .header p {
+      font-size: var(--font-size-md);
+      opacity: 0.9;
+      margin-top: var(--spacing-sm);
+    }
+
+    .breakpoint-indicator {
+      position: fixed;
+      bottom: var(--spacing-md);
+      right: var(--spacing-md);
+      background: var(--color-neutral-900);
+      color: white;
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--radius-md);
+      font-family: var(--font-family-mono);
+      font-size: var(--font-size-sm);
+      box-shadow: var(--shadow-xl);
+      z-index: var(--z-index-tooltip);
+    }
+  </style>
+</head>
+<body>
+  <!-- Breakpoint Indicator -->
+  <div class="breakpoint-indicator">
+    <span class="d-mobile-block d-tablet-none d-desktop-none">📱 Mobile</span>
+    <span class="d-mobile-none d-tablet-block d-desktop-none">📱 Tablet</span>
+    <span class="d-mobile-none d-tablet-none d-desktop-block">🖥️ Desktop</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1>Grid System Demo</h1>
+      <p>Responsive layout system with CSS Grid and Flexbox</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- 12 Column Grid -->
+    <section class="demo-section">
+      <h2>12-Column Grid System</h2>
+      <p class="mb-lg">Flexible 12-column grid that adapts to different screen sizes</p>
+
+      <h3>Full Width Columns</h3>
+      <div class="grid">
+        <div class="col-12"><div class="demo-box">col-12</div></div>
+        <div class="col-6"><div class="demo-box">col-6</div></div>
+        <div class="col-6"><div class="demo-box">col-6</div></div>
+        <div class="col-4"><div class="demo-box">col-4</div></div>
+        <div class="col-4"><div class="demo-box">col-4</div></div>
+        <div class="col-4"><div class="demo-box">col-4</div></div>
+        <div class="col-3"><div class="demo-box">col-3</div></div>
+        <div class="col-3"><div class="demo-box">col-3</div></div>
+        <div class="col-3"><div class="demo-box">col-3</div></div>
+        <div class="col-3"><div class="demo-box">col-3</div></div>
+      </div>
+
+      <h3>Responsive Columns</h3>
+      <p style="margin-bottom: var(--spacing-md); color: var(--color-text-secondary);">
+        Resize your browser to see the responsive behavior
+      </p>
+      <div class="grid">
+        <div class="col-mobile-12 col-tablet-6 col-desktop-4">
+          <div class="demo-box demo-box--secondary">
+            Mobile: 12<br>Tablet: 6<br>Desktop: 4
+          </div>
+        </div>
+        <div class="col-mobile-12 col-tablet-6 col-desktop-4">
+          <div class="demo-box demo-box--secondary">
+            Mobile: 12<br>Tablet: 6<br>Desktop: 4
+          </div>
+        </div>
+        <div class="col-mobile-12 col-tablet-12 col-desktop-4">
+          <div class="demo-box demo-box--secondary">
+            Mobile: 12<br>Tablet: 12<br>Desktop: 4
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equal Column Grids -->
+    <section class="demo-section">
+      <h2>Equal Column Layouts</h2>
+      
+      <h3>2 Columns</h3>
+      <div class="grid-cols-2 mb-xl">
+        <div class="demo-box">Column 1</div>
+        <div class="demo-box">Column 2</div>
+      </div>
+
+      <h3>3 Columns</h3>
+      <div class="grid-cols-3 mb-xl">
+        <div class="demo-box demo-box--success">Column 1</div>
+        <div class="demo-box demo-box--success">Column 2</div>
+        <div class="demo-box demo-box--success">Column 3</div>
+      </div>
+
+      <h3>4 Columns</h3>
+      <div class="grid-cols-4">
+        <div class="demo-box demo-box--secondary">1</div>
+        <div class="demo-box demo-box--secondary">2</div>
+        <div class="demo-box demo-box--secondary">3</div>
+        <div class="demo-box demo-box--secondary">4</div>
+      </div>
+    </section>
+
+    <!-- Auto-Fit Grid -->
+    <section class="demo-section">
+      <h2>Auto-Fit Grid</h2>
+      <p class="mb-lg">Automatically adjusts number of columns based on available space</p>
+      <div class="grid-auto">
+        <div class="demo-box">Auto 1</div>
+        <div class="demo-box">Auto 2</div>
+        <div class="demo-box">Auto 3</div>
+        <div class="demo-box">Auto 4</div>
+        <div class="demo-box">Auto 5</div>
+      </div>
+    </section>
+
+    <!-- Flexbox Layouts -->
+    <section class="demo-section">
+      <h2>Flexbox Utilities</h2>
+      
+      <h3>Space Between</h3>
+      <div class="flex flex--between mb-xl">
+        <div class="demo-box" style="flex: 0 0 auto;">Left</div>
+        <div class="demo-box" style="flex: 0 0 auto;">Right</div>
+      </div>
+
+      <h3>Centered</h3>
+      <div class="flex flex--center mb-xl" style="min-height: 150px; background: var(--color-neutral-100); border-radius: var(--radius-md);">
+        <div class="demo-box" style="flex: 0 0 auto;">Centered Content</div>
+      </div>
+
+      <h3>Column Layout</h3>
+      <div class="flex flex--column" style="max-width: 400px;">
+        <div class="demo-box demo-box--success">Item 1</div>
+        <div class="demo-box demo-box--success">Item 2</div>
+        <div class="demo-box demo-box--success">Item 3</div>
+      </div>
+    </section>
+
+    <!-- Container Variants -->
+    <section class="demo-section">
+      <h2>Container Sizes</h2>
+      
+      <div class="container--sm" style="background: var(--color-primary-50); padding: var(--spacing-md); border-radius: var(--radius-md); margin-bottom: var(--spacing-md);">
+        <p style="text-align: center;"><strong>Small Container</strong> (max-width: 768px)</p>
+      </div>
+
+      <div class="container--md" style="background: var(--color-secondary-50); padding: var(--spacing-md); border-radius: var(--radius-md); margin-bottom: var(--spacing-md);">
+        <p style="text-align: center;"><strong>Medium Container</strong> (max-width: 1024px)</p>
+      </div>
+
+      <div class="container--lg" style="background: var(--color-success-50); padding: var(--spacing-md); border-radius: var(--radius-md);">
+        <p style="text-align: center;"><strong>Large Container</strong> (max-width: 1440px)</p>
+      </div>
+    </section>
+
+    <!-- Spacing Utilities -->
+    <section class="demo-section">
+      <h2>Spacing Utilities</h2>
+      <div class="grid-cols-3">
+        <div>
+          <div class="demo-box mb-md">mb-md</div>
+          <div class="demo-box">Second box</div>
+        </div>
+        <div>
+          <div class="demo-box p-xl">p-xl<br>Large padding</div>
+        </div>
+        <div>
+          <div class="demo-box mx-auto" style="max-width: 150px;">mx-auto<br>Centered</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Responsive Visibility -->
+    <section class="demo-section">
+      <h2>Responsive Display</h2>
+      <div class="d-mobile-block d-tablet-none d-desktop-none">
+        <div class="demo-box" style="background: var(--color-warning-100); border-color: var(--color-warning-500);">
+          📱 Visible only on MOBILE
+        </div>
+      </div>
+      <div class="d-mobile-none d-tablet-block d-desktop-none">
+        <div class="demo-box" style="background: var(--color-warning-100); border-color: var(--color-warning-500);">
+          📱 Visible only on TABLET
+        </div>
+      </div>
+      <div class="d-mobile-none d-tablet-none d-desktop-block">
+        <div class="demo-box" style="background: var(--color-warning-100); border-color: var(--color-warning-500);">
+          🖥️ Visible only on DESKTOP
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="section" style="background: var(--color-neutral-900); color: white; margin-top: var(--spacing-4xl);">
+    <div class="container text-center">
+      <p>Grid System Demo - Hello World Web Components</p>
+      <p style="opacity: 0.7; margin-top: var(--spacing-sm);">Resize your browser to see responsive behavior</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/components/main.js"></script>
+</body>
+</html>

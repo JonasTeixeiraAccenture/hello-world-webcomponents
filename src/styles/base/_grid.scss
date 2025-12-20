@@ -1,0 +1,239 @@
+/**
+ * Grid System
+ * Flexible 12-column grid system using CSS Grid
+ */
+
+@use '../tokens/breakpoints' as bp;
+
+// Grid container
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-md);
+  width: 100%;
+
+  // Responsive gaps
+  @include bp.mobile {
+    gap: var(--spacing-sm);
+  }
+
+  @include bp.tablet {
+    gap: var(--spacing-md);
+  }
+
+  @include bp.desktop {
+    gap: var(--spacing-lg);
+  }
+
+  // Gap modifiers
+  &--gap-sm {
+    gap: var(--spacing-sm);
+  }
+
+  &--gap-md {
+    gap: var(--spacing-md);
+  }
+
+  &--gap-lg {
+    gap: var(--spacing-lg);
+  }
+
+  &--gap-xl {
+    gap: var(--spacing-xl);
+  }
+
+  // No gap
+  &--no-gap {
+    gap: 0;
+  }
+}
+
+// Grid items - Column spans
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+// Responsive column spans - Mobile
+@include bp.mobile {
+  @for $i from 1 through 12 {
+    .col-mobile-#{$i} {
+      grid-column: span $i;
+    }
+  }
+  
+  .col-mobile-full {
+    grid-column: 1 / -1;
+  }
+}
+
+// Responsive column spans - Tablet
+@include bp.tablet {
+  @for $i from 1 through 12 {
+    .col-tablet-#{$i} {
+      grid-column: span $i;
+    }
+  }
+  
+  .col-tablet-full {
+    grid-column: 1 / -1;
+  }
+}
+
+// Responsive column spans - Desktop
+@include bp.desktop {
+  @for $i from 1 through 12 {
+    .col-desktop-#{$i} {
+      grid-column: span $i;
+    }
+  }
+  
+  .col-desktop-full {
+    grid-column: 1 / -1;
+  }
+}
+
+// Column that spans full width
+.col-full {
+  grid-column: 1 / -1;
+}
+
+// Auto-fit grid (flexible columns)
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+
+  @include bp.mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Equal columns
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+
+  @include bp.mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+
+  @include bp.mobile {
+    grid-template-columns: 1fr;
+  }
+
+  @include bp.tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid-cols-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+
+  @include bp.mobile {
+    grid-template-columns: 1fr;
+  }
+
+  @include bp.tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Flexbox utilities
+.flex {
+  display: flex;
+  gap: var(--spacing-md);
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--between {
+    justify-content: space-between;
+  }
+
+  &--around {
+    justify-content: space-around;
+  }
+
+  &--evenly {
+    justify-content: space-evenly;
+  }
+
+  &--start {
+    justify-content: flex-start;
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
+
+  &--align-start {
+    align-items: flex-start;
+  }
+
+  &--align-end {
+    align-items: flex-end;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--gap-sm {
+    gap: var(--spacing-sm);
+  }
+
+  &--gap-lg {
+    gap: var(--spacing-lg);
+  }
+
+  &--gap-xl {
+    gap: var(--spacing-xl);
+  }
+}
+
+// Flex item utilities
+.flex-1 {
+  flex: 1;
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+// Responsive flex direction
+@include bp.mobile {
+  .flex-mobile-column {
+    flex-direction: column;
+  }
+}
+
+@include bp.tablet {
+  .flex-tablet-column {
+    flex-direction: column;
+  }
+}

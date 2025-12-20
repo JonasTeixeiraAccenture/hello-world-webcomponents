@@ -1,3 +1,6 @@
+// Import design system
+import '../styles/main.scss';
+
 // Main entry point
 console.log('Hello World Web Components!');
 

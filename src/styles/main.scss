@@ -1,0 +1,27 @@
+/**
+ * Main SCSS Entry Point
+ * Imports all design tokens, functions, mixins, and base styles
+ */
+
+// Import design tokens
+@use 'tokens';
+@use 'functions';
+@use 'mixins';
+@use 'base';
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

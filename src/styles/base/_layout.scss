@@ -1,0 +1,234 @@
+/**
+ * Layout System
+ * Container, sections, and layout utilities
+ */
+
+@use '../tokens/breakpoints' as bp;
+
+// Centered container with max width
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+
+  @include bp.mobile {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+
+  @include bp.desktop {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+
+  // Container size variants
+  &--sm {
+    max-width: 768px;
+  }
+
+  &--md {
+    max-width: 1024px;
+  }
+
+  &--lg {
+    max-width: 1440px;
+  }
+
+  &--xl {
+    max-width: 1600px;
+  }
+
+  &--fluid {
+    max-width: 100%;
+  }
+}
+
+// Section spacing
+.section {
+  padding-top: var(--spacing-3xl);
+  padding-bottom: var(--spacing-3xl);
+
+  @include bp.mobile {
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+  }
+
+  &--sm {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  &--lg {
+    padding-top: var(--spacing-4xl);
+    padding-bottom: var(--spacing-4xl);
+  }
+}
+
+// Display utilities
+.d-block {
+  display: block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-none {
+  display: none;
+}
+
+// Responsive display utilities
+@include bp.mobile {
+  .d-mobile-none {
+    display: none;
+  }
+
+  .d-mobile-block {
+    display: block;
+  }
+}
+
+@include bp.tablet {
+  .d-tablet-none {
+    display: none;
+  }
+
+  .d-tablet-block {
+    display: block;
+  }
+}
+
+@include bp.desktop {
+  .d-desktop-none {
+    display: none;
+  }
+
+  .d-desktop-block {
+    display: block;
+  }
+}
+
+// Spacing utilities (margin and padding)
+$spacings: (
+  'xs': var(--spacing-xs),
+  'sm': var(--spacing-sm),
+  'md': var(--spacing-md),
+  'lg': var(--spacing-lg),
+  'xl': var(--spacing-xl),
+  '2xl': var(--spacing-2xl),
+  '3xl': var(--spacing-3xl),
+  '4xl': var(--spacing-4xl)
+);
+
+$directions: (
+  't': 'top',
+  'r': 'right',
+  'b': 'bottom',
+  'l': 'left'
+);
+
+// Margin utilities
+@each $size, $value in $spacings {
+  .m-#{$size} {
+    margin: #{$value};
+  }
+
+  @each $dir, $direction in $directions {
+    .m#{$dir}-#{$size} {
+      margin-#{$direction}: #{$value};
+    }
+  }
+
+  .mx-#{$size} {
+    margin-left: #{$value};
+    margin-right: #{$value};
+  }
+
+  .my-#{$size} {
+    margin-top: #{$value};
+    margin-bottom: #{$value};
+  }
+}
+
+// Padding utilities
+@each $size, $value in $spacings {
+  .p-#{$size} {
+    padding: #{$value};
+  }
+
+  @each $dir, $direction in $directions {
+    .p#{$dir}-#{$size} {
+      padding-#{$direction}: #{$value};
+    }
+  }
+
+  .px-#{$size} {
+    padding-left: #{$value};
+    padding-right: #{$value};
+  }
+
+  .py-#{$size} {
+    padding-top: #{$value};
+    padding-bottom: #{$value};
+  }
+}
+
+// Auto margin for centering
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Width utilities
+.w-full {
+  width: 100%;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+// Text alignment
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// Position utilities
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
