@@ -3,240 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello World Web Components App</title>
+  <title>Hello World App</title>
   <link rel="stylesheet" href="/src/styles/main.scss">
-  <style>
-    body {
-      min-height: 100vh;
-      background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary-light) 100%);
-      padding: var(--spacing-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .app-container {
-      width: 100%;
-      max-width: 1200px;
-    }
-
-    .app-header {
-      text-align: center;
-      margin-bottom: var(--spacing-xl);
-      animation: fadeIn 0.6s ease-out;
-    }
-
-    .app-header h1 {
-      font-size: var(--font-size-3xl);
-      font-weight: var(--font-weight-bold);
-      color: white;
-      margin-bottom: var(--spacing-sm);
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .app-header p {
-      font-size: var(--font-size-lg);
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .main-content {
-      animation: slideUp 0.6s ease-out 0.2s both;
-    }
-
-    .form-card {
-      margin-bottom: var(--spacing-lg);
-    }
-
-    .result-area {
-      min-height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .result-content {
-      text-align: center;
-      padding: var(--spacing-xl);
-    }
-
-    .result-icon {
-      font-size: 4rem;
-      margin-bottom: var(--spacing-md);
-      animation: scaleIn 0.5s ease-out;
-    }
-
-    .result-title {
-      font-size: var(--font-size-2xl);
-      font-weight: var(--font-weight-bold);
-      margin-bottom: var(--spacing-sm);
-      animation: fadeIn 0.5s ease-out 0.1s both;
-    }
-
-    .result-message {
-      font-size: var(--font-size-base);
-      color: var(--color-text-secondary);
-      animation: fadeIn 0.5s ease-out 0.2s both;
-    }
-
-    .success-result .result-icon {
-      color: var(--color-success);
-    }
-
-    .success-result .result-title {
-      color: var(--color-success-dark);
-    }
-
-    .error-result .result-icon {
-      color: var(--color-error);
-    }
-
-    .error-result .result-title {
-      color: var(--color-error-dark);
-    }
-
-    .loading-result .result-icon {
-      animation: spin 1s linear infinite;
-    }
-
-    .empty-state {
-      text-align: center;
-      padding: var(--spacing-xl);
-      color: var(--color-text-secondary);
-    }
-
-    .empty-state-icon {
-      font-size: 3rem;
-      margin-bottom: var(--spacing-md);
-      opacity: 0.5;
-    }
-
-    .instructions {
-      margin-bottom: var(--spacing-lg);
-    }
-
-    .form-actions {
-      display: flex;
-      gap: var(--spacing-sm);
-      margin-top: var(--spacing-md);
-    }
-
-    .stats-grid {
-      margin-top: var(--spacing-xl);
-    }
-
-    .stat-card {
-      text-align: center;
-      padding: var(--spacing-md);
-    }
-
-    .stat-value {
-      font-size: var(--font-size-2xl);
-      font-weight: var(--font-weight-bold);
-      color: var(--color-primary);
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .stat-label {
-      font-size: var(--font-size-sm);
-      color: var(--color-text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes scaleIn {
-      from {
-        transform: scale(0);
-      }
-      to {
-        transform: scale(1);
-      }
-    }
-
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      body {
-        padding: var(--spacing-md);
-      }
-
-      .app-header h1 {
-        font-size: var(--font-size-2xl);
-      }
-
-      .app-header p {
-        font-size: var(--font-size-base);
-      }
-
-      .result-icon {
-        font-size: 3rem;
-      }
-
-      .result-title {
-        font-size: var(--font-size-xl);
-      }
-
-      .form-actions {
-        flex-direction: column;
-      }
-
-      .form-actions custom-button {
-        width: 100%;
-      }
-    }
-
-    /* Focus management for accessibility */
-    :focus-visible {
-      outline: 3px solid var(--color-primary);
-      outline-offset: 2px;
-      border-radius: var(--border-radius-sm);
-    }
-
-    /* Skip to main content link for accessibility */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--color-primary);
-      color: white;
-      padding: var(--spacing-sm) var(--spacing-md);
-      text-decoration: none;
-      border-radius: var(--border-radius-sm);
-      z-index: 100;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="/src/styles/app.scss">
 </head>
 <body>
   <!-- Accessibility: Skip to main content -->
@@ -244,380 +13,80 @@
 
   <div class="app-container">
     <!-- Header -->
-    <header class="app-header" role="banner">
-      <h1>🌍 Hello World Application</h1>
-      <p>Enter "world" to unlock the secret message</p>
+    <header class="app-header">
+      <h1>Hello World</h1>
+      <p>Enter "world" to unlock the message</p>
     </header>
 
     <!-- Main Content -->
-    <main class="main-content" role="main">
-      <!-- Grid Layout: 2 columns on desktop, 1 on mobile -->
-      <div class="grid grid-cols-1 tablet:grid-cols-2 gap-lg">
-        
-        <!-- Left Column: Form -->
-        <div>
-          <custom-card variant="elevated" padding="lg" class="form-card">
-            <h2 slot="header">Enter Your Input</h2>
+    <main class="main-content">
+      <!-- Form Section -->
+      <section class="form-section">
+        <form id="main-form" aria-label="Hello World Form">
+          <custom-input
+            id="user-input"
+            label="Your Input"
+            type="text"
+            placeholder="Type 'world' here..."
+            helper-text="Case-insensitive"
+            required
+          ></custom-input>
+
+          <div class="form-actions">
+            <custom-button 
+              id="submit-btn" 
+              variant="primary" 
+              size="lg"
+              type="submit">
+              Submit
+            </custom-button>
             
-            <!-- Instructions Alert -->
-            <div class="instructions">
-              <custom-alert variant="info" size="sm" show-icon="true">
-                <span slot="title">How to use</span>
-                Type "world" in the input field and click Submit to see the magic! ✨
-              </custom-alert>
-            </div>
+            <custom-button 
+              id="clear-btn" 
+              variant="outline" 
+              size="lg">
+              Clear
+            </custom-button>
+          </div>
+        </form>
+      </section>
 
-            <!-- Form -->
-            <form id="main-form" aria-label="Hello World Form">
-              <custom-input
-                id="user-input"
-                label="Your Input"
-                type="text"
-                placeholder="Type 'world' here..."
-                helper-text="Case-insensitive input"
-                required
-                aria-describedby="input-instructions"
-              ></custom-input>
-
-              <div class="form-actions">
-                <custom-button 
-                  id="submit-btn" 
-                  variant="primary" 
-                  size="lg"
-                  type="submit"
-                  aria-label="Submit your input">
-                  Submit
-                </custom-button>
-                
-                <custom-button 
-                  id="clear-btn" 
-                  variant="outline" 
-                  size="lg"
-                  aria-label="Clear the form">
-                  Clear
-                </custom-button>
-              </div>
-            </form>
-
-            <!-- Statistics -->
-            <div slot="footer">
-              <div class="grid grid-cols-3 gap-sm stats-grid">
-                <custom-card variant="outlined" padding="sm" class="stat-card">
-                  <div class="stat-value" id="attempts-count">0</div>
-                  <div class="stat-label">Attempts</div>
-                </custom-card>
-                
-                <custom-card variant="outlined" padding="sm" class="stat-card">
-                  <div class="stat-value" id="success-count">0</div>
-                  <div class="stat-label">Success</div>
-                </custom-card>
-                
-                <custom-card variant="outlined" padding="sm" class="stat-card">
-                  <div class="stat-value" id="error-count">0</div>
-                  <div class="stat-label">Errors</div>
-                </custom-card>
-              </div>
-            </div>
-          </custom-card>
+      <!-- Result Display -->
+      <section class="result-area" role="region" aria-live="polite">
+        <div id="result-display">
+          <div class="empty-state">
+            <div class="empty-state-icon">💬</div>
+            <p>Your result will appear here</p>
+          </div>
         </div>
+      </section>
 
-        <!-- Right Column: Result Display -->
-        <div>
-          <custom-card 
-            variant="elevated" 
-            padding="none" 
-            class="result-area"
-            role="region"
-            aria-live="polite"
-            aria-atomic="true">
-            
-            <div id="result-display">
-              <!-- Empty State -->
-              <div class="empty-state" id="empty-state">
-                <div class="empty-state-icon">📝</div>
-                <p>Your result will appear here</p>
-                <p style="font-size: var(--font-size-sm); margin-top: var(--spacing-sm);">
-                  Enter text and click Submit
-                </p>
-              </div>
-            </div>
-          </custom-card>
+      <!-- Statistics -->
+      <section class="stats-container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="attempts-count">0</div>
+            <div class="stat-label">Attempts</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-value" id="success-count">0</div>
+            <div class="stat-label">Success</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-value" id="error-count">0</div>
+            <div class="stat-label">Errors</div>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   </div>
 
-  <!-- Toast notifications container -->
-  <div 
-    id="toast-container" 
-    style="position: fixed; top: 1rem; right: 1rem; z-index: 1000; max-width: 400px;"
-    aria-live="polite"
-    aria-atomic="true">
-  </div>
+  <!-- Toast notifications -->
+  <div id="toast-container" aria-live="polite"></div>
 
-  <script type="module">
-    import './src/components/main.js';
-
-    // Application State
-    const state = {
-      attempts: 0,
-      successes: 0,
-      errors: 0
-    };
-
-    // DOM Elements
-    const form = document.getElementById('main-form');
-    const userInput = document.getElementById('user-input');
-    const submitBtn = document.getElementById('submit-btn');
-    const clearBtn = document.getElementById('clear-btn');
-    const resultDisplay = document.getElementById('result-display');
-    const toastContainer = document.getElementById('toast-container');
-    
-    // Stat counters
-    const attemptsCount = document.getElementById('attempts-count');
-    const successCount = document.getElementById('success-count');
-    const errorCount = document.getElementById('error-count');
-
-    // Utility: Show toast notification
-    function showToast(variant, title, message, duration = 4000) {
-      const alert = document.createElement('custom-alert');
-      alert.variant = variant;
-      alert.dismissible = true;
-      alert.autoDismiss = duration;
-      alert.size = 'md';
-      
-      const titleSlot = document.createElement('span');
-      titleSlot.slot = 'title';
-      titleSlot.textContent = title;
-      
-      alert.appendChild(titleSlot);
-      alert.appendChild(document.createTextNode(message));
-      
-      toastContainer.appendChild(alert);
-      
-      alert.addEventListener('alert-dismissed', () => {
-        setTimeout(() => alert.remove(), 300);
-      });
-
-      // Announce to screen readers
-      const announcement = document.createElement('div');
-      announcement.setAttribute('role', 'status');
-      announcement.setAttribute('aria-live', 'polite');
-      announcement.className = 'sr-only';
-      announcement.textContent = `${title}: ${message}`;
-      document.body.appendChild(announcement);
-      setTimeout(() => announcement.remove(), 1000);
-    }
-
-    // Utility: Update stats display
-    function updateStats() {
-      attemptsCount.textContent = state.attempts;
-      successCount.textContent = state.successes;
-      errorCount.textContent = state.errors;
-    }
-
-    // Display result in the result area
-    function displayResult(type, title, message, icon) {
-      const resultHTML = `
-        <div class="result-content ${type}-result">
-          <div class="result-icon">${icon}</div>
-          <h3 class="result-title">${title}</h3>
-          <p class="result-message">${message}</p>
-        </div>
-      `;
-      
-      resultDisplay.innerHTML = resultHTML;
-    }
-
-    // Show loading state
-    function showLoading() {
-      displayResult(
-        'loading',
-        'Processing...',
-        'Validating your input',
-        '⏳'
-      );
-    }
-
-    // Validate input (client-side mock with simulated delay)
-    async function validateInput(input) {
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 800));
-      
-      const trimmedInput = input.trim();
-      
-      // Empty input check
-      if (!trimmedInput) {
-        return {
-          valid: false,
-          message: 'Input cannot be empty. Please provide "world" as input.'
-        };
-      }
-
-      // Check if input is "world" (case-insensitive)
-      if (trimmedInput.toLowerCase() === 'world') {
-        return {
-          valid: true,
-          message: 'Hello World'
-        };
-      } else {
-        return {
-          valid: false,
-          message: `Expected input 'world', but received '${trimmedInput}'. Please provide 'world' as input.`
-        };
-      }
-    }
-
-    // Handle form submission
-    async function handleSubmit(event) {
-      event.preventDefault();
-      
-      const inputValue = userInput.value;
-      
-      // Update stats
-      state.attempts++;
-      updateStats();
-
-      // Show loading state
-      submitBtn.setLoading(true);
-      showLoading();
-      
-      // Clear any previous error messages on the input
-      userInput.removeAttribute('error-message');
-
-      try {
-        // Validate input
-        const result = await validateInput(inputValue);
-
-        if (result.valid) {
-          // Success!
-          state.successes++;
-          updateStats();
-          
-          displayResult(
-            'success',
-            '🎉 Success!',
-            result.message,
-            '✅'
-          );
-          
-          showToast(
-            'success',
-            'Validation Successful',
-            result.message
-          );
-
-          // Clear input after success
-          setTimeout(() => {
-            userInput.value = '';
-          }, 2000);
-          
-        } else {
-          // Validation error
-          state.errors++;
-          updateStats();
-          
-          displayResult(
-            'error',
-            'Validation Error',
-            result.message,
-            '❌'
-          );
-          
-          showToast(
-            'error',
-            'Validation Failed',
-            result.message,
-            5000
-          );
-
-          // Show error on input field
-          userInput.setAttribute('error-message', 'Invalid input');
-          
-          // Focus back on input for correction
-          setTimeout(() => {
-            userInput.shadowRoot.querySelector('input').focus();
-          }, 100);
-        }
-      } catch (error) {
-        // Unexpected error
-        state.errors++;
-        updateStats();
-        
-        displayResult(
-          'error',
-          'Error',
-          'An unexpected error occurred. Please try again.',
-          '⚠️'
-        );
-        
-        showToast(
-          'error',
-          'Error',
-          'An unexpected error occurred'
-        );
-      } finally {
-        submitBtn.setLoading(false);
-      }
-    }
-
-    // Handle clear button
-    function handleClear() {
-      userInput.value = '';
-      userInput.removeAttribute('error-message');
-      
-      // Reset to empty state
-      resultDisplay.innerHTML = `
-        <div class="empty-state" id="empty-state">
-          <div class="empty-state-icon">📝</div>
-          <p>Your result will appear here</p>
-          <p style="font-size: var(--font-size-sm); margin-top: var(--spacing-sm);">
-            Enter text and click Submit
-          </p>
-        </div>
-      `;
-      
-      showToast(
-        'info',
-        'Form Cleared',
-        'Ready for new input',
-        2000
-      );
-
-      // Focus on input
-      setTimeout(() => {
-        userInput.shadowRoot.querySelector('input').focus();
-      }, 100);
-    }
-
-    // Event Listeners
-    form.addEventListener('submit', handleSubmit);
-    submitBtn.addEventListener('button-click', handleSubmit);
-    clearBtn.addEventListener('button-click', handleClear);
-
-    // Enter key on input
-    userInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        handleSubmit(e);
-      }
-    });
-
-    // Initialize focus
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        userInput.shadowRoot.querySelector('input').focus();
-      }, 500);
-    });
-
-    // Show welcome message
-    setTimeout(() => {
-      showToast(
-        'info',
-        'Welcome! 👋',
-        'Enter "world" to see the magic happen',
-        6000
-      );
-    }, 1000);
-  </script>
+  <script type="module" src="/src/app.js"></script>
 </body>
 </html>
+
