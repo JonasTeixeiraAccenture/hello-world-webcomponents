@@ -16,15 +16,15 @@ export default defineConfig(({ command, mode }) => ({
     emptyOutDir: true,
     // Generate source maps for easier debugging (disabled in production for security)
     sourcemap: mode !== 'production',
-    // Use terser for better code minification and optimization
-    minify: 'terser',
+    // Use esbuild for fast code minification (default, already included with Vite)
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         // Split vendor code into separate chunks for better browser caching
         // When you update your code, users don't re-download unchanged dependencies
-        manualChunks: {
-          vendor: ['happy-dom'], // Add more dependencies here as needed
-        },
+        // manualChunks: {
+        //   vendor: [], // Add production dependencies here (not dev dependencies!)
+        // },
       },
     },
   },
