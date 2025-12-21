@@ -3,11 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello World Web Components</title>
+  <title>Hello World App</title>
+  <meta name="description" content="A Hello World application built with Web Components">
+  <link rel="stylesheet" href="/src/styles/main.scss">
+  <link rel="stylesheet" href="/src/styles/app.scss">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#3b82f6">
 </head>
 <body>
-  <h1>Hello World Web Components</h1>
-  <div id="app"></div>
-  <script type="module" src="/src/components/main.js"></script>
+  <!-- Accessibility: Skip to main content -->
+  <a href="#main-form" class="skip-link">Skip to main content</a>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <h1>Hello World</h1>
+      <p>Enter "world" to unlock the message</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Form Section -->
+      <section class="form-section">
+        <form id="main-form" aria-label="Hello World Form">
+          <custom-input
+            id="user-input"
+            label="Your Input"
+            type="text"
+            placeholder="Type 'world' here..."
+            helper-text="Case-insensitive"
+            required
+          ></custom-input>
+
+          <div class="form-actions">
+            <custom-button 
+              id="submit-btn" 
+              variant="primary" 
+              size="lg"
+              type="submit">
+              Submit
+            </custom-button>
+            
+            <custom-button 
+              id="clear-btn" 
+              variant="outline" 
+              size="lg">
+              Clear
+            </custom-button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Result Display -->
+      <section class="result-area" role="region" aria-live="polite">
+        <div id="result-display">
+          <div class="empty-state">
+            <div class="empty-state-icon">💬</div>
+            <p>Your result will appear here</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistics -->
+      <section class="stats-container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="attempts-count">0</div>
+            <div class="stat-label">Attempts</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-value" id="success-count">0</div>
+            <div class="stat-label">Success</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-value" id="error-count">0</div>
+            <div class="stat-label">Errors</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Toast notifications -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <script type="module" src="/src/app.js"></script>
 </body>
 </html>
+
