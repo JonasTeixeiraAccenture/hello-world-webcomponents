@@ -1,7 +1,8 @@
 // Import design system
 import '../styles/main.scss';
 
-// Main entry point
-console.log('Hello World Web Components!');
-
-// Your web components will go here
+// Import custom components
+import './custom-input.js';
+import './custom-button.js';
+import './custom-card.js';
+import './custom-alert.js';
