@@ -233,3 +233,30 @@ body {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
+
+// Toast Container - Fixed positioning to prevent layout shifts
+#toast-container {
+  position: fixed;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  z-index: var(--z-index-tooltip);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  pointer-events: none; // Allow clicks to pass through empty space
+  max-width: 400px;
+
+  // Re-enable pointer events for actual toasts
+  custom-alert {
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #toast-container {
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    left: var(--spacing-md);
+    max-width: none;
+  }
+}
