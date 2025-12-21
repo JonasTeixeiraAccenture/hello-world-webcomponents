@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found</title>
+  <meta name="description" content="Page not found">
+  <link rel="stylesheet" href="/src/styles/main.scss">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-background);
+      font-family: var(--font-family-base);
+    }
+
+    .error-container {
+      text-align: center;
+      padding: var(--spacing-xl);
+      max-width: 600px;
+    }
+
+    .error-code {
+      font-size: calc(var(--font-size-4xl) * 2);  /* 6rem - Extra large for impact */
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      margin: 0;
+      line-height: 1;
+    }
+
+    .error-title {
+      font-size: var(--font-size-2xl);  /* 2rem - 32px */
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-primary);
+      margin: var(--spacing-md) 0;
+    }
+
+    .error-message {
+      font-size: var(--font-size-md);  /* 1.125rem - 18px */
+      color: var(--color-text-secondary);
+      margin: var(--spacing-md) 0 var(--spacing-xl);
+      line-height: var(--line-height-relaxed);
+    }
+
+    .error-actions {
+      display: flex;
+      gap: var(--spacing-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    custom-button {
+      min-width: 150px;
+    }
+
+    .error-illustration {
+      font-size: calc(var(--font-size-4xl) * 2.67);  /* ~8rem - Large emoji */
+      margin-bottom: var(--spacing-lg);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(calc(var(--spacing-md) * -1));  /* -20px using token */
+      }
+    }
+
+    @media (max-width: var(--breakpoint-mobile)) {
+      .error-code {
+        font-size: calc(var(--font-size-4xl) * 1.33);  /* ~4rem on mobile */
+      }
+
+      .error-title {
+        font-size: var(--font-size-xl);  /* 1.5rem - 24px on mobile */
+      }
+
+      .error-illustration {
+        font-size: calc(var(--font-size-4xl) * 1.67);  /* ~5rem on mobile */
+      }
+
+      .error-actions {
+        flex-direction: column;
+      }
+
+      custom-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-illustration">🔍</div>
+    <h1 class="error-code">404</h1>
+    <h2 class="error-title">Page Not Found</h2>
+    <p class="error-message">
+      Oops! The page you're looking for doesn't exist. 
+      It might have been moved or deleted.
+    </p>
+    
+    <div class="error-actions">
+      <custom-button 
+        variant="primary" 
+        size="lg"
+        onclick="window.location.href='/hello-world-webcomponents/'">
+        Go Home
+      </custom-button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/components/main.js"></script>
+</body>
+</html>

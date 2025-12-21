@@ -64,11 +64,32 @@
   /* Semantic Colors */
   --color-background: #ffffff;
   --color-surface: var(--color-neutral-50);
+  --color-on-surface: var(--color-neutral-900);
   --color-text-primary: var(--color-neutral-900);
   --color-text-secondary: var(--color-neutral-600);
   --color-text-disabled: var(--color-neutral-400);
   --color-border: var(--color-neutral-300);
   --color-divider: var(--color-neutral-200);
+
+  /* Semantic Color Aliases for Components */
+  --color-primary: var(--color-primary-500);
+  --color-primary-light: var(--color-primary-100);
+  --color-primary-dark: var(--color-primary-700);
+  --color-secondary: var(--color-secondary-500);
+  --color-secondary-light: var(--color-secondary-100);
+  --color-secondary-dark: var(--color-secondary-700);
+  --color-success: var(--color-success-500);
+  --color-success-light: var(--color-success-100);
+  --color-success-dark: var(--color-success-700);
+  --color-error: var(--color-error-500);
+  --color-error-light: var(--color-error-100);
+  --color-error-dark: var(--color-error-700);
+  --color-warning: var(--color-warning-500);
+  --color-warning-light: var(--color-warning-100);
+  --color-warning-dark: var(--color-warning-700);
+  --color-info: var(--color-primary-500);
+  --color-info-light: var(--color-primary-100);
+  --color-info-dark: var(--color-primary-700);
 }
 
 /* Dark mode support */
